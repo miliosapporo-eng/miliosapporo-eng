@@ -2,13 +2,21 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>design4qol</title>
+  <title>summary.pdf</title>
+
+  <!-- 0秒後に summary.pdf へ自動ジャンプ -->
+  <meta http-equiv="refresh" content="0; url=summary.pdf">
+  <link rel="canonical" href="summary.pdf">
 </head>
 <body>
-  <h1>design4qol</h1>
-  <p>サイトは準備中です。</p>
+  <p>
+    自動的に <a href="summary.pdf">会社概要（PDF）</a> に移動します。<br>
+    自動で切り替わらない場合はリンクをクリックしてください。
+  </p>
 
-  <!-- Keynoteから書き出したPDFを proposal.pdf という名前でアップしてある場合 -->
-  <p><a href="summary.pdf">会社概要を開く</a></p>
+  <script>
+    // JSが使える環境なら即座に遷移
+    window.location.href = "summary.pdf";
+  </script>
 </body>
 </html>
