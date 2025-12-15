@@ -69,19 +69,19 @@ header nav ul li a:hover {
 }
 
 /* ==================================== */
-/* 1.5. メインビジュアルのスタイル (縦横比 1:3 に変更) */
+/* 1.5. メインビジュアルのスタイル (縦横比 1:3) */
 /* ==================================== */
 
 .main-visual {
-    /* 縦横比を定義するための設定 */
+    /* メインコンテンツ(main)と同じ幅と中央配置を適用 */
+    max-width: 1200px;
+    margin: 20px auto; /* 上下20px、左右中央 */
+    
+    /* 縦横比 1:3 の定義 */
     position: relative; 
     height: 0; 
     padding-bottom: 33.3333%; /* 高さ:幅 = 1:3 (1/3 * 100%) */
-    overflow: hidden; /* コンテナからはみ出る画像を隠す */
-    
-    /* 配置と幅の設定 */
-    margin: 20px auto; 
-    max-width: 1200px;
+    overflow: hidden; 
 }
 
 .main-visual img {
@@ -94,14 +94,13 @@ header nav ul li a:hover {
     object-fit: cover; /* 縦横比を維持しつつ、コンテナを完全に覆う（トリミングされる可能性があります） */
 }
 
-
 /* ==================================== */
 /* 2. メインコンテンツとフッター */
 /* ==================================== */
 main {
     padding: 20px;
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 0 auto; /* ★修正点★: mainの上に余白は不要になったため、0 auto に変更 */
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
