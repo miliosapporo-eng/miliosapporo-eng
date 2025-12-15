@@ -1,41 +1,104 @@
-.hero-header {
-    /* 背景画像の設定 */
-    background-image: url('images/header-bg.jpg'); /* 画像ファイルのパスを指定 */
-    background-size: cover; /* ヘッダー全体を覆うように画像を拡大・縮小 */
-    background-position: center; /* 画像を中央に配置 */
-    background-repeat: no-repeat; /* 画像を繰り返さない */
-    
-    /* 高さを設定しないと画像が表示されないため、高さを指定 */
-    height: 300px; 
-
-    /* テキストを見やすくするため、色を白などに変えることが多い */
-    color: white; 
-    text-align: center;
-    padding-top: 50px; /* 必要に応じて調整 */
+/* ==================================== */
+/* 0. 全体リセットと基本設定 */
+/* ==================================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
 }
 
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==================================== */
+/* 1. ヘッダーとナビゲーション (共通) */
+/* ==================================== */
+
+/* デスクトップ向けの基本設定（ロゴとナビを横並びにする） */
+header {
+    display: flex; 
+    justify-content: space-between; /* ロゴとナビを左右に配置 */
+    align-items: center; /* 垂直方向の中央揃え */
+    padding: 15px 20px;
+    background-color: #ffffff; /* ヘッダーの背景色 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影をつけて分離感を出す */
+}
+
+/* ロゴ画像の設定 */
 .header-logo img {
-    /* 1. 画像が親要素（ここでは .header-logo）の幅を超えないようにする */
+    /* 1. 画像が親要素の幅を超えないようにする */
     max-width: 100%; 
 
     /* 2. 画像の縦横比を保つ */
     height: auto; 
 
-    /* 3. デスクトップで表示したい最大の幅を設定する (一般的なロゴの幅) */
-    width: 180px; /* 例: ロゴの幅を180ピクセルに固定 */
+    /* 3. デスクトップで表示したい最大の幅を設定 */
+    width: 180px; /* ロゴの幅を180ピクセルに固定 */
+    height: auto;
 }
 
-/* デスクトップ向けの基本設定（ロゴとナビを横並びにする） */
-header {
-    display: flex; /* 横並びのレイアウト設定 */
-    justify-content: space-between;
-    align-items: center;
+/* ナビゲーションリストの横並び設定 */
+header nav ul {
+    display: flex;
+    gap: 20px; /* リンク間のスペース */
+}
+
+/* ナビゲーションリンクのスタイル */
+header nav ul li a {
+    color: #333;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+
+/* ==================================== */
+/* 2. メインコンテンツとフッター */
+/* ==================================== */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+footer {
+    text-align: center;
     padding: 15px 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
 }
 
-/* ---------------------------------------------------------------- */
-/* ★★ スマートフォン対応の CSS はここから ★★ */
-/* ---------------------------------------------------------------- */
+
+/* ==================================== */
+/* 3. スマートフォン対応 (レスポンシブ) */
+/* ==================================== */
 
 /* 画面幅が600px以下の場合に適用されるスタイル */
 @media (max-width: 600px) {
@@ -47,8 +110,8 @@ header {
     }
 
     .header-logo {
-        /* ロゴの上に少しスペースを確保 */
-        margin-bottom: 10px;
+        /* ロゴの下に少しスペースを確保 */
+        margin-bottom: 10px; 
     }
 
     /* ナビゲーションメニューのリンクも縦並びに変更 */
@@ -56,9 +119,11 @@ header {
         flex-direction: column;
         text-align: center;
         width: 100%;
+        border-top: 1px solid #eee; /* メニューの区切り線 */
+        padding-top: 10px;
     }
     
     header nav ul li {
-        margin-bottom: 5px; /* メニュー項目間のスペース */
+        margin-bottom: 5px; 
     }
 }
