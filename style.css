@@ -35,16 +35,15 @@ a:hover {
 
 /* デスクトップ向けの基本設定（ロゴとナビを横並びにする） */
 header {
-    max-width: 1200px; 
-    margin: 0 auto; 
+    max-width: 1200px; /* main, main-visualと同じ幅に制限 */
+    margin: 0 auto; /* 中央揃え */
     
     display: flex; 
-    /* ロゴとナビを左右に配置 */
-    justify-content: space-between; 
-    align-items: center; 
+    justify-content: space-between; /* ロゴとナビ（またはハンバーガーアイコン）を左右に配置 */
+    align-items: center; /* 垂直方向の中央揃え */
     padding: 15px 20px;
-    background-color: #ffffff; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    background-color: #ffffff; /* ヘッダーの背景色 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影をつけて分離感を出す */
 }
 
 /* ロゴ画像の設定 */
@@ -54,7 +53,7 @@ header {
     width: 180px;
 }
 
-/* ナビゲーションリストの横並び設定 */
+/* ナビゲーションリストの横並び設定 (デスクトップ用) */
 .global-nav ul {
     display: flex;
     gap: 20px; /* リンク間のスペース */
@@ -123,24 +122,110 @@ footer {
     margin-top: 40px;
 }
 
+/* ==================================== */
+/* 2.5. ハンバーガーメニューの新規スタイル (通常は非表示) */
+/* ==================================== */
+
+/* チェックボックスとトグルボタンはデフォルトで非表示 */
+.menu-toggle-input, .menu-toggle-button {
+    display: none;
+}
+
 
 /* ==================================== */
 /* 3. スマートフォン対応 (レスポンシブ) */
-/* モバイルでも横並びを維持 */
 /* ==================================== */
 
 /* 画面幅が600px以下の場合に適用されるスタイル */
 @media (max-width: 600px) {
 
-    /* ヘッダーは横並びを維持し、パディングを調整 */
-    header {
-        padding: 10px;
+    /* 1. ハンバーガーアイコンの表示とスタイル */
+    .menu-toggle-button {
+        display: block; /* モバイルでのみ表示 */
+        width: 30px;
+        height: 30px;
+        position: relative;
+        cursor: pointer;
+        z-index: 100; /* 最前面に配置 */
     }
 
-    /* ナビゲーションのリンク間のスペースを狭めるなど調整が必要な場合 */
-    .global-nav ul {
-        gap: 10px; /* リンク間のスペースを狭める */
-        flex-wrap: wrap; /* リンクが入りきらない場合は折り返す */
+    /* アイコンの線（3本線）のスタイル */
+    .menu-toggle-button span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: #333;
+        position: absolute;
+        left: 0;
+        transition: 0.3s ease-in-out;
     }
+
+    .menu-toggle-button span:nth-child(1) { top: 3px; }
+    .menu-toggle-button span:nth-child(2) { top: 13px; }
+    .menu-toggle-button span:nth-child(3) { top: 23px; }
+
+
+    /* 2. ナビゲーションメニューの初期状態（非表示） */
+    .global-nav {
+        /* デスクトップの横並びを解除 */
+        display: block;
+        
+        /* 画面全体を覆うように絶対配置 */
+        position: absolute;
+        top: 60px; /* ヘッダーの高さに合わせて調整 */
+        left: 0;
+        max-width: none; /* 幅制限を解除 */
+        width: 100%;
+        height: auto; 
+        background-color: #ffffff;
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+        
+        /* 初期状態では非表示にする（上にスライドさせて隠す） */
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+        z-index: 90;
+    }
+    
+    /* メニュー内のリストを縦並びにする */
+    .global-nav ul {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        gap: 0;
+    }
+    
+    .global-nav ul li a {
+        display: block;
+        padding: 10px 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+
+    /* 3. クリック時のメニュー表示とアイコン変化 */
+    
+    /* チェックボックスがチェックされたとき（クリックされたとき）のアイコンの変化 */
+    #menu-toggle:checked ~ .menu-toggle-button span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 13px;
+    }
+    #menu-toggle:checked ~ .menu-toggle-button span:nth-child(2) {
+        opacity: 0; /* 中央の線を消す */
+    }
+    #menu-toggle:checked ~ .menu-toggle-button span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 13px;
+    }
+
+    /* メニューを開く */
+    #menu-toggle:checked ~ .global-nav {
+        transform: translateY(0); /* 上から表示 */
+        opacity: 1;
+    }
+
+    /* その他、既存のモバイル設定の調整 */
+    header {
+        padding: 10px;
+    }
 
 }
