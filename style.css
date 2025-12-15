@@ -1,0 +1,15 @@
+.hero-header {
+    /* 背景画像の設定 */
+    background-image: url('images/header-bg.jpg'); /* 画像ファイルのパスを指定 */
+    background-size: cover; /* ヘッダー全体を覆うように画像を拡大・縮小 */
+    background-position: center; /* 画像を中央に配置 */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
+    
+    /* 高さを設定しないと画像が表示されないため、高さを指定 */
+    height: 300px; 
+
+    /* テキストを見やすくするため、色を白などに変えることが多い */
+    color: white; 
+    text-align: center;
+    padding-top: 50px; /* 必要に応じて調整 */
+}
