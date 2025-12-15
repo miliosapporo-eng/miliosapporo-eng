@@ -35,6 +35,10 @@ a:hover {
 
 /* デスクトップ向けの基本設定（ロゴとナビを横並びにする） */
 header {
+    /* ★変更点★: main, main-visualと同じ幅と中央配置を適用 */
+    max-width: 1200px; /* mainと同じ幅に制限 */
+    margin: 0 auto; /* 中央揃え */
+    
     display: flex; 
     justify-content: space-between; /* ロゴとナビを左右に配置 */
     align-items: center; /* 垂直方向の中央揃え */
