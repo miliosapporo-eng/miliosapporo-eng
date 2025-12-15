@@ -13,3 +13,52 @@
     text-align: center;
     padding-top: 50px; /* 必要に応じて調整 */
 }
+
+.header-logo img {
+    /* 1. 画像が親要素（ここでは .header-logo）の幅を超えないようにする */
+    max-width: 100%; 
+
+    /* 2. 画像の縦横比を保つ */
+    height: auto; 
+
+    /* 3. デスクトップで表示したい最大の幅を設定する (一般的なロゴの幅) */
+    width: 180px; /* 例: ロゴの幅を180ピクセルに固定 */
+}
+
+/* デスクトップ向けの基本設定（ロゴとナビを横並びにする） */
+header {
+    display: flex; /* 横並びのレイアウト設定 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* ---------------------------------------------------------------- */
+/* ★★ スマートフォン対応の CSS はここから ★★ */
+/* ---------------------------------------------------------------- */
+
+/* 画面幅が600px以下の場合に適用されるスタイル */
+@media (max-width: 600px) {
+    
+    header {
+        /* ロゴとナビを縦並びに変更 */
+        flex-direction: column; 
+        padding: 10px;
+    }
+
+    .header-logo {
+        /* ロゴの上に少しスペースを確保 */
+        margin-bottom: 10px;
+    }
+
+    /* ナビゲーションメニューのリンクも縦並びに変更 */
+    header nav ul {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+    
+    header nav ul li {
+        margin-bottom: 5px; /* メニュー項目間のスペース */
+    }
+}
