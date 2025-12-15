@@ -2,30 +2,30 @@
 /* 0. 全体リセットと基本設定 */
 /* ==================================== */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
 }
 
 h1, h2, h3 {
-    margin-top: 0;
+    margin-top: 0;
 }
 
 ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
-    text-decoration: none;
-    color: #007bff;
+    text-decoration: none;
+    color: #007bff;
 }
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline;
 }
 
 
@@ -35,43 +35,66 @@ a:hover {
 
 /* デスクトップ向けの基本設定（ロゴとナビを横並びにする） */
 header {
-    display: flex; 
-    justify-content: space-between; /* ロゴとナビを左右に配置 */
-    align-items: center; /* 垂直方向の中央揃え */
-    padding: 15px 20px;
-    background-color: #ffffff; /* ヘッダーの背景色 */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影をつけて分離感を出す */
+    display: flex; 
+    justify-content: space-between; /* ロゴとナビを左右に配置 */
+    align-items: center; /* 垂直方向の中央揃え */
+    padding: 15px 20px;
+    background-color: #ffffff; /* ヘッダーの背景色 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影をつけて分離感を出す */
 }
 
 /* ロゴ画像の設定 */
 .header-logo img {
-    /* 1. 画像が親要素の幅を超えないようにする */
-    max-width: 100%; 
+    /* 1. 画像が親要素の幅を超えないようにする */
+    max-width: 100%; 
 
-    /* 2. 画像の縦横比を保つ */
-    height: auto; 
+    /* 2. 画像の縦横比を保つ */
+    height: auto; 
 
-    /* 3. デスクトップで表示したい最大の幅を設定 */
-    width: 180px; /* ロゴの幅を180ピクセルに固定 */
-    height: auto;
+    /* 3. デスクトップで表示したい最大の幅を設定 */
+    width: 180px; /* ロゴの幅を180ピクセルに固定 */
+    height: auto;
 }
 
 /* ナビゲーションリストの横並び設定 */
 header nav ul {
-    display: flex;
-    gap: 20px; /* リンク間のスペース */
+    display: flex;
+    gap: 20px; /* リンク間のスペース */
 }
 
 /* ナビゲーションリンクのスタイル */
 header nav ul li a {
-    color: #333;
-    padding: 5px 10px;
-    transition: color 0.3s;
+    color: #333;
+    padding: 5px 10px;
+    transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #007bff;
-    text-decoration: none;
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* ==================================== */
+/* 1.5. メインビジュアルのスタイル (追加分) */
+/* ==================================== */
+
+.main-visual {
+    /* 上下の余白（適宜調整してください） */
+    margin: 20px auto; 
+    /* インライン要素（画像）を中央揃えにする */
+    text-align: center;
+    /* main要素に合わせて幅を制限したい場合は以下を調整 */
+    max-width: 1200px;
+}
+
+.main-visual img {
+    /* 画像が画面からはみ出さないようにする */
+    max-width: 100%; 
+    /* 画像のアスペクト比を維持 */
+    height: auto; 
+    /* 画像自体をブロック要素にし、マージンで中央配置する */
+    display: block; 
+    margin: 0 auto; 
 }
 
 
@@ -79,20 +102,20 @@ header nav ul li a:hover {
 /* 2. メインコンテンツとフッター */
 /* ==================================== */
 main {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 footer {
-    text-align: center;
-    padding: 15px 20px;
-    background-color: #333;
-    color: white;
-    margin-top: 40px;
+    text-align: center;
+    padding: 15px 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
 }
 
 
@@ -102,28 +125,28 @@ footer {
 
 /* 画面幅が600px以下の場合に適用されるスタイル */
 @media (max-width: 600px) {
-    
-    header {
-        /* ロゴとナビを縦並びに変更 */
-        flex-direction: column; 
-        padding: 10px;
-    }
+    
+    header {
+        /* ロゴとナビを縦並びに変更 */
+        flex-direction: column; 
+        padding: 10px;
+    }
 
-    .header-logo {
-        /* ロゴの下に少しスペースを確保 */
-        margin-bottom: 10px; 
-    }
+    .header-logo {
+        /* ロゴの下に少しスペースを確保 */
+        margin-bottom: 10px; 
+    }
 
-    /* ナビゲーションメニューのリンクも縦並びに変更 */
-    header nav ul {
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-        border-top: 1px solid #eee; /* メニューの区切り線 */
-        padding-top: 10px;
-    }
-    
-    header nav ul li {
-        margin-bottom: 5px; 
-    }
+    /* ナビゲーションメニューのリンクも縦並びに変更 */
+    header nav ul {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        border-top: 1px solid #eee; /* メニューの区切り線 */
+        padding-top: 10px;
+    }
+    
+    header nav ul li {
+        margin-bottom: 5px; 
+    }
 }
