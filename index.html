@@ -76,6 +76,18 @@
             transform: translateY(0);
         }
 
+        /* Fluid Typography: 
+           画面幅(vw)に応じて文字サイズを動的に計算。
+           clamp(最小, 推奨値, 最大)
+        */
+        .fluid-h1 {
+            font-size: clamp(1.75rem, 6vw, 4.5rem);
+        }
+        .fluid-message {
+            font-size: clamp(1.1rem, 2.5vw, 1.875rem);
+            line-height: 2.2;
+        }
+
         .logo-img {
             height: 32px;
             width: auto;
@@ -102,9 +114,6 @@
                         <div class="hidden flex-col">
                             <span class="text-3xl font-brand tracking-tighter leading-none">MiLio</span>
                         </div>
-                        <div class="flex flex-col border-l border-gray-200 pl-4 text-left">
-                            <span class="text-[10px] font-brand tracking-[0.3em] text-gray-400 uppercase">design4qol.com</span>
-                        </div>
                     </a>
                 </div>
                 <div class="hidden md:flex space-x-12 items-center text-left">
@@ -122,13 +131,14 @@
 
     <!-- Hero Section -->
     <section class="relative h-screen flex flex-col items-center justify-center px-6 text-center">
-        <div class="max-w-6xl w-full animate-fade-in text-center">
+        <div class="max-w-7xl w-full animate-fade-in text-center">
             <div class="mb-16 inline-flex flex-col items-center text-center">
-                <span class="text-[11px] font-brand tracking-[0.6em] text-milio-brand uppercase mb-4 font-medium text-center">Design for Quality of Life</span>
+                <span class="text-[11px] font-brand tracking-[0.6em] text-milio-brand uppercase mb-4 font-medium">Design for Quality of Life</span>
                 <div class="w-12 h-[1px] bg-milio-brand"></div>
             </div>
-            <h1 class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-brand font-light text-milio-black mb-16 leading-tight tracking-aosagi text-center">
-                <span class="md:whitespace-nowrap text-center">利用者視点で<br>より豊かな社会を設計する</span>
+            <!-- fluid-h1クラスを適用して動的なサイズ調整を実現 -->
+            <h1 class="fluid-h1 font-brand font-light text-milio-black mb-16 leading-tight tracking-aosagi text-center">
+                利用者視点で<br>より豊かな社会を設計する
             </h1>
             <p class="text-gray-500 text-sm md:text-base font-light max-w-xl mx-auto leading-loose tracking-widest text-center">
                 お客様のお客様まで実りの多い人生になるように。<br>
@@ -142,32 +152,32 @@
         <div class="max-w-7xl mx-auto px-8 lg:px-16 text-left">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-20">
                 <div class="lg:col-span-5 reveal text-left">
-                    <h2 class="text-milio-brand font-brand tracking-[0.4em] text-[10px] mb-8 uppercase font-medium tracking-ultra">01 / Philosophy</h2>
+                    <h2 class="text-milio-brand font-brand tracking-[0.4em] text-[10px] mb-8 uppercase font-medium tracking-ultra text-left">01 / Philosophy</h2>
                     <h3 class="text-3xl md:text-4xl font-brand font-light text-milio-black mb-10 leading-tight">
                         Satisfied Users.<br>
                         <span class="text-gray-300">Not just numbers.</span>
                     </h3>
-                    <div class="space-y-8 text-gray-600 font-light leading-loose text-sm md:text-base tracking-widest">
-                        <p class="text-milio-black font-normal border-l-2 border-milio-brand pl-6">
+                    <div class="space-y-8 text-gray-600 font-light leading-loose text-sm md:text-base tracking-widest text-left">
+                        <p class="text-milio-black font-normal border-l-2 border-milio-brand pl-6 text-left">
                             「顧客満足度を上げる」ことと、<br>「満足度の高い顧客を増やす」ことは似て非なるものです。
                         </p>
-                        <p>
+                        <p class="text-left">
                             お客さま（ユーザ）とは一体誰のことを指すのか。そのお客さま（ユーザ）は一体何を求めて何を感じているか。マーケティング優位な世の中だからこそ、一度立ち止まってみませんか？
                         </p>
-                        <p>
+                        <p class="text-left">
                             貴社の業務（サービス）や商品（プロダクト）が、本当に届けたい人に届き、心から満足してもらえているか。私たちはそこを見直し、再設計するパートナーです。
                         </p>
                     </div>
                 </div>
-                <div class="lg:col-start-7 lg:col-span-6 reveal flex items-center">
+                <div class="lg:col-start-7 lg:col-span-6 reveal flex items-center text-left">
                     <div class="bg-milio-light p-12 md:p-16 border-l border-milio-brand text-left shadow-sm">
                         <p class="text-xl md:text-2xl font-light text-milio-black leading-relaxed mb-12 tracking-aosagi text-left text-left">
                             "社内のどこの部署の誰とでも<br class="hidden md:block">
                             「顧客」のライフスタイルについて話し合えますか？"
                         </p>
-                        <div class="space-y-8 text-xs md:text-sm text-gray-500 font-light leading-loose tracking-widest text-left text-left">
-                            <p>もし答えが <span class="font-medium text-milio-brand underline underline-offset-8 text-left text-left">NO</span> なら、それはペルソナの認識がないかもしれません。</p>
-                            <p>各々の仕事が「誰」に向けたものなのか、もう一度定義しましょう。別々の作業をしていても「同じ誰か」を頭に浮かべてその人の為に、やりがいのある仕事をしませんか？</p>
+                        <div class="space-y-8 text-xs md:text-sm text-gray-500 font-light leading-loose tracking-widest text-left">
+                            <p class="text-left">もし答えが <span class="font-medium text-milio-brand underline underline-offset-8 text-left text-left">NO</span> なら、それはペルソナの認識がないかもしれません。</p>
+                            <p class="text-left text-left">各々の仕事が「誰」に向けたものなのか、もう一度定義しましょう。別々の作業をしていても「同じ誰か」を頭に浮かべてその人の為に、やりがいのある仕事をしませんか？</p>
                         </div>
                     </div>
                 </div>
@@ -177,33 +187,33 @@
 
     <!-- Usability Evaluation Section -->
     <section id="usability" class="py-40 bg-milio-black text-white text-left">
-        <div class="max-w-7xl mx-auto px-8 lg:px-16 text-left text-left text-left">
-            <div class="max-w-4xl mb-32 reveal text-left text-left">
+        <div class="max-w-7xl mx-auto px-8 lg:px-16 text-left text-left">
+            <div class="max-w-4xl mb-32 reveal text-left">
                 <h2 class="text-milio-brand font-brand tracking-[0.4em] text-[10px] mb-8 uppercase font-medium tracking-ultra text-left text-left">02 / Business Domain</h2>
-                <h3 class="text-4xl md:text-5xl font-brand font-light mb-12 tracking-aosagi leading-tight">Usability Evaluation</h3>
-                <p class="text-gray-400 font-light text-sm md:text-lg leading-loose tracking-widest text-left text-left">
+                <h3 class="text-4xl md:text-5xl font-brand font-light mb-12 tracking-aosagi leading-tight text-left">Usability Evaluation</h3>
+                <p class="text-gray-400 font-light text-sm md:text-lg leading-loose tracking-widest text-left">
                     出会いの目前で、商談の途中で、成約手前で離脱してしまった「未来の顧客」を見つけ出し、<br>不満のもとであった問題点をデザインし直します。
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-gray-800 text-left text-left">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-gray-800 text-left">
                 <!-- Plan 1 -->
                 <div class="p-12 border-b md:border-b-0 md:border-r border-gray-800 reveal group transition-all duration-700 text-left">
                     <span class="text-[10px] font-brand text-milio-brand uppercase tracking-[0.3em] block mb-12 font-medium text-left">Day / Trial</span>
                     <h4 class="text-xl font-normal mb-8 tracking-aosagi text-left text-left">導入プラン</h4>
-                    <p class="text-xs text-gray-500 mb-16 leading-loose h-16 font-light tracking-widest text-left text-left">まずは率直な意見を聞きたい方へ。<br>ヒアリングと検証方法の提案。</p>
+                    <p class="text-xs text-gray-500 mb-16 leading-loose h-16 font-light tracking-widest text-left text-left text-left">まずは率直な意見を聞きたい方へ。<br>ヒアリングと検証方法の提案。</p>
                     <div class="border-t border-gray-800 pt-10 text-left">
-                        <p class="text-2xl font-brand font-light text-milio-brand tracking-tighter text-left">¥20,000 <span class="text-[10px] text-gray-600 tracking-normal ml-1 text-left text-left">/ hour</span></p>
+                        <p class="text-2xl font-brand font-light text-milio-brand tracking-tighter text-left text-left">¥20,000 <span class="text-[10px] text-gray-600 tracking-normal ml-1 text-left text-left">/ hour</span></p>
                     </div>
                 </div>
 
                 <!-- Plan 2 -->
                 <div class="p-12 border-b md:border-b-0 md:border-r border-gray-800 reveal group bg-milio-brand text-white transition-all duration-700 text-left" style="transition-delay: 0.1s;">
-                    <span class="text-[10px] font-brand text-white/70 uppercase tracking-[0.3em] block mb-12 font-medium text-left text-left">Week / Standard</span>
+                    <span class="text-[10px] font-brand text-white/70 uppercase tracking-[0.3em] block mb-12 font-medium text-left">Week / Standard</span>
                     <h4 class="text-xl font-normal mb-8 tracking-aosagi text-left text-left">いったんプラン</h4>
-                    <p class="text-xs text-white/80 mb-16 leading-loose h-16 font-light tracking-widest text-left text-left">仮説を立て、資産となる<br>ペルソナ・シナリオを構築。</p>
+                    <p class="text-xs text-white/80 mb-16 leading-loose h-16 font-light tracking-widest text-left text-left text-left text-left">仮説を立て、資産となる<br>ペルソナ・シナリオを構築。</p>
                     <div class="border-t border-white/20 text-white/30 pt-10 text-left">
-                        <p class="text-2xl font-brand font-light text-white tracking-tighter text-left text-left">¥150,000 <span class="text-[10px] opacity-60 tracking-normal ml-1 text-left text-left">/ case</span></p>
+                        <p class="text-2xl font-brand font-light text-white tracking-tighter text-left text-left text-left">¥150,000 <span class="text-[10px] opacity-60 tracking-normal ml-1 text-left text-left">/ case</span></p>
                     </div>
                 </div>
 
@@ -211,9 +221,9 @@
                 <div class="p-12 reveal group transition-all duration-700 text-left text-left" style="transition-delay: 0.2s;">
                     <span class="text-[10px] font-brand text-milio-brand uppercase tracking-[0.3em] block mb-12 font-medium text-left">Month / Pro</span>
                     <h4 class="text-xl font-normal mb-8 tracking-aosagi text-left text-left text-left">周回プラン</h4>
-                    <p class="text-xs text-gray-500 mb-16 leading-loose h-16 font-light tracking-widest text-left text-left">ほんかくてき！<br>データ収集・検証・改善のサイクル。</p>
-                    <div class="border-t border-gray-800 pt-10 text-left">
-                        <p class="text-2xl font-brand font-light text-milio-brand tracking-tighter text-left text-left text-left">¥500,000~ <span class="text-[10px] text-gray-600 tracking-normal ml-1 text-left text-left">/ term</span></p>
+                    <p class="text-xs text-gray-500 mb-16 leading-loose h-16 font-light tracking-widest text-left text-left text-left">ほんかくてき！<br>データ収集・検証・改善のサイクル。</p>
+                    <div class="border-t border-gray-800 pt-10 text-left text-left text-left">
+                        <p class="text-2xl font-brand font-light text-milio-brand tracking-tighter text-left text-left text-left text-left">¥500,000~ <span class="text-[10px] text-gray-600 tracking-normal ml-1 text-left text-left text-left">/ term</span></p>
                     </div>
                 </div>
             </div>
@@ -228,67 +238,67 @@
 
     <!-- Projects Section -->
     <section id="projects" class="py-40 bg-white text-left">
-        <div class="max-w-7xl mx-auto px-8 lg:px-16 text-left text-left">
+        <div class="max-w-7xl mx-auto px-8 lg:px-16 text-left">
             <div class="mb-32 reveal text-left text-left">
                 <h2 class="text-gray-400 font-brand tracking-[0.4em] text-[10px] mb-6 uppercase font-medium tracking-ultra text-left text-left">03 / Projects</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-32 text-left">
-                <!-- Project 01: CREATIVE WORKS -->
+                <!-- Project 01 -->
                 <div class="reveal group text-left">
                     <div class="aspect-[16/10] bg-gray-50 mb-10 overflow-hidden relative border border-gray-100 text-left">
-                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Creative Works" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 text-left text-left">
+                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Creative Works" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 text-left">
                     </div>
                     <span class="text-[10px] font-brand text-milio-brand uppercase tracking-[0.3em] block mb-4 font-medium text-left">01 / CREATIVE WORKS</span>
-                    <h4 class="text-xl font-light mb-6 tracking-aosagi text-left text-left">「撮影」で広がる楽しい世界を<br>より多くの人に体験してもらいたい。</h4>
+                    <h4 class="text-xl font-light mb-6 tracking-aosagi text-left text-left text-left text-left">「撮影」で広がる楽しい世界を<br>より多くの人に体験してもらいたい。</h4>
                     <p class="text-sm text-gray-500 font-light leading-loose tracking-widest text-left text-left">
                         クリエイティブの力で、日常の何気ない瞬間を特別な体験へと変える。MiLioが提案する、新しい価値創造の形です。
                     </p>
                 </div>
 
-                <!-- Project 02: PHOTOGRAPHY -->
+                <!-- Project 02 -->
                 <div class="reveal group text-left" style="transition-delay: 0.1s;">
                     <div class="aspect-[16/10] bg-gray-50 mb-10 overflow-hidden relative border border-gray-100 text-left text-left">
                         <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Photography" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 text-left text-left text-left">
                     </div>
-                    <span class="text-[10px] font-brand text-milio-brand uppercase tracking-[0.3em] block mb-4 font-medium text-left text-left text-left">02 / PHOTOGRAPHY</span>
+                    <span class="text-[10px] font-brand text-milio-brand uppercase tracking-[0.3em] block mb-4 font-medium text-left text-left">02 / PHOTOGRAPHY</span>
                     <h4 class="text-xl font-light mb-6 tracking-aosagi leading-snug text-left text-left text-left">写真という世界そのものを<br>デザインする『見つめる写真のはじめ型』</h4>
                     <p class="text-sm text-gray-500 font-light leading-loose tracking-widest text-left text-left text-left">
                         教育なき写真の世界に、歴史と哲学、技術とマナーを共有するポータルサイトを。撮り手と被写体の幸せな関係を再構築します。
                     </p>
                 </div>
 
-                <!-- Project 03: LIFE SUPPORT -->
+                <!-- Project 03 -->
                 <div class="reveal group text-left" style="transition-delay: 0.2s;">
                     <div class="aspect-[16/10] bg-gray-50 mb-10 overflow-hidden relative border border-gray-100 text-left text-left">
                         <img src="https://images.unsplash.com/photo-1544776193-37d350b22042?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Life Support" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 text-left text-left text-left">
                     </div>
-                    <span class="text-[10px] font-brand text-milio-brand uppercase tracking-[0.3em] block mb-4 font-medium text-left text-left text-left text-left">03 / LIFE SUPPORT</span>
+                    <span class="text-[10px] font-brand text-milio-brand uppercase tracking-[0.3em] block mb-4 font-medium text-left text-left text-left">03 / LIFE SUPPORT</span>
                     <h4 class="text-xl font-light mb-6 tracking-aosagi leading-snug text-left text-left text-left">自分の意思で生きる為の<br>マイヒストリーシート『Save Point』</h4>
                     <p class="text-sm text-gray-500 font-light leading-loose tracking-widest text-left text-left text-left">
                         「一人で悩まなくていい人生」を。ライフログを通じて自分の感情を記録し、満足度の高い人生を歩むための伴走型サポート。
                     </p>
                 </div>
                 
-                <!-- Project 04: MERCHANDISE -->
+                <!-- Project 04 -->
                 <div class="reveal group text-left" style="transition-delay: 0.3s;">
                     <div class="aspect-[16/10] bg-gray-50 mb-10 overflow-hidden relative border border-gray-100 text-left text-left">
                         <img src="https://images.unsplash.com/photo-1516762689617-e1cffcef479d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Merchandise" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 text-left text-left">
                     </div>
-                    <span class="text-[10px] font-brand text-milio-brand uppercase tracking-[0.3em] mb-4 block font-medium text-left">04 / MERCHANDISE</span>
-                    <h4 class="text-xl font-light mb-6 tracking-aosagi text-left text-left text-left text-left">Dark Side Luck</h4>
-                    <p class="text-sm text-gray-500 font-light leading-loose tracking-widest text-left text-left">
+                    <span class="text-[10px] font-brand text-milio-brand uppercase tracking-[0.3em] mb-4 block font-medium text-left text-left">04 / MERCHANDISE</span>
+                    <h4 class="text-xl font-light mb-6 tracking-aosagi text-left text-left text-left">Dark Side Luck</h4>
+                    <p class="text-sm text-gray-500 font-light leading-loose tracking-widest text-left text-left text-left text-left">
                         「いつもそばにいるよ」を具現化する。旅人と定住者をフィードバックで繋ぐグッズやZINEの制作・EC運営。
                     </p>
                 </div>
 
-                <!-- Project 05: LOCAL CONTENTS PRODUCE -->
+                <!-- Project 05 -->
                 <div class="reveal group text-left" style="transition-delay: 0.4s;">
                     <div class="aspect-[16/10] bg-gray-50 mb-10 overflow-hidden relative border border-gray-100 text-left text-left">
-                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Rugby" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 text-left text-left">
+                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Rugby" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 text-left text-left text-left">
                     </div>
-                    <span class="text-[10px] font-brand text-milio-brand uppercase tracking-[0.3em] mb-4 block font-medium text-left">05 / LOCAL CONTENTS PRODUCE</span>
-                    <h4 class="text-xl font-light mb-6 tracking-aosagi text-left text-left">小樽商科大学ラグビー部 広報</h4>
+                    <span class="text-[10px] font-brand text-milio-brand uppercase tracking-[0.3em] mb-4 block font-medium text-left text-left text-left">05 / LOCAL CONTENTS PRODUCE</span>
+                    <h4 class="text-xl font-light mb-6 tracking-aosagi text-left text-left text-left">小樽商科大学ラグビー部 広報</h4>
                     <p class="text-sm text-gray-500 font-light leading-loose tracking-widest text-left text-left">
                         創立100年を超える伝統。スポーツと地域貢献を掛け合わせ、学生が街のアイコンとなる「愛される存在」への変革を支援。
                     </p>
@@ -300,47 +310,48 @@
     <!-- Representative Message -->
     <section class="py-56 bg-milio-light border-t border-gray-100 text-center text-center">
         <div class="max-w-4xl mx-auto px-8 reveal text-center">
-            <h3 class="text-2xl md:text-3xl font-light text-milio-black leading-[2.8] mb-24 tracking-aosagi text-center text-center">
+            <!-- fluid-messageクラスを適用して動的にサイズ調整 -->
+            <h3 class="fluid-message font-light text-milio-black mb-24 tracking-aosagi text-center">
                 <span class="inline-block text-center text-center">お一人お一人の人生に</span><span class="inline-block">可能な限りで寄り添って、</span><br class="hidden md:block">
                 <span class="inline-block text-center text-center">少しでも満足度の高い人生を</span><span class="inline-block text-center">過ごすことができる</span><br class="hidden md:block">
-                <span class="inline-block text-center text-center">サポートさせていただきたい。</span>
+                <span class="inline-block text-center text-center text-center text-center">サポートさせていただきたい。</span>
             </h3>
             <div class="space-y-6 text-center text-center">
                 <p class="text-[10px] font-brand tracking-[0.5em] text-milio-brand uppercase font-medium text-center text-center">Representative</p>
                 <div class="inline-block relative text-center text-center">
-                    <p class="text-xl font-normal text-milio-black tracking-widest text-center text-center text-center text-center">清水 隆利 <span class="text-xs text-gray-400 font-brand ml-3 font-light text-center text-center text-center">Takanori Shimizu</span></p>
-                    <div class="w-full h-[1px] bg-milio-brand/30 my-6 text-center text-center"></div>
-                    <p class="text-[11px] tracking-[0.4em] text-milio-brand uppercase font-medium text-center text-center text-center">call me 430 / しみお</p>
+                    <p class="text-xl font-normal text-milio-black tracking-widest text-center text-center text-center text-center">清水 隆利 <span class="text-xs text-gray-400 font-brand ml-3 font-light text-center text-center text-center text-center">Takanori Shimizu</span></p>
+                    <div class="w-full h-[1px] bg-milio-brand/30 my-6 text-center text-center text-center"></div>
+                    <p class="text-[11px] tracking-[0.4em] text-milio-brand uppercase font-medium text-center text-center text-center text-center">call me 430 / しみお</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Company Profile Section -->
-    <section id="company" class="py-40 bg-white border-t border-gray-50 text-left text-left">
-        <div class="max-w-7xl mx-auto px-8 lg:px-16 reveal text-left text-left">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 text-left">
-                <div class="lg:col-span-4 text-left text-left text-left">
-                    <h2 class="text-gray-400 font-brand tracking-[0.4em] text-[10px] mb-4 uppercase font-medium tracking-ultra text-left text-left text-left">04 / Company</h2>
-                    <h3 class="text-4xl font-brand font-light text-milio-black tracking-tighter text-left text-left text-left">Information</h3>
+    <section id="company" class="py-40 bg-white border-t border-gray-50 text-left">
+        <div class="max-w-7xl mx-auto px-8 lg:px-16 reveal text-left">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 text-left text-left">
+                <div class="lg:col-span-4 text-left text-left text-left text-left">
+                    <h2 class="text-gray-400 font-brand tracking-[0.4em] text-[10px] mb-4 uppercase font-medium tracking-ultra text-left text-left text-left text-left">04 / Company</h2>
+                    <h3 class="text-4xl font-brand font-light text-milio-black tracking-tighter text-left text-left text-left text-left text-left">Information</h3>
                 </div>
-                <div class="lg:col-span-8 text-left text-left text-left">
-                    <table class="w-full text-sm font-light tracking-widest text-left text-left text-left">
-                        <tr class="border-b border-gray-100 text-left">
-                            <th class="py-8 text-left font-normal text-gray-400 w-40 uppercase text-[10px] tracking-[0.3em] text-left text-left text-left">Name</th>
-                            <td class="py-8 font-normal text-left text-left text-left text-left">合同会社 MiLio</td>
-                        </tr>
-                        <tr class="border-b border-gray-100 text-left text-left">
-                            <th class="py-8 text-left font-normal text-gray-400 uppercase text-[10px] tracking-[0.3em] text-left text-left text-left">Established</th>
-                            <td class="py-8 text-left text-left text-left text-left text-left">2017年 3月</td>
-                        </tr>
+                <div class="lg:col-span-8 text-left text-left text-left text-left">
+                    <table class="w-full text-sm font-light tracking-widest text-left text-left text-left text-left">
                         <tr class="border-b border-gray-100 text-left text-left text-left">
-                            <th class="py-8 text-left font-normal text-gray-400 uppercase text-[10px] tracking-[0.3em] text-left text-left text-left text-left text-left text-left">Address</th>
-                            <td class="py-8 text-left text-left text-left text-left text-left text-left text-left">〒060-0004 札幌市中央区北4条西4丁目1-7 MMSビル 412</td>
+                            <th class="py-8 text-left font-normal text-gray-400 w-40 uppercase text-[10px] tracking-[0.3em] text-left text-left text-left text-left text-left">Name</th>
+                            <td class="py-8 font-normal text-left text-left text-left text-left text-left text-left">合同会社 MiLio</td>
                         </tr>
                         <tr class="border-b border-gray-100 text-left text-left text-left text-left">
-                            <th class="py-8 text-left font-normal text-gray-400 uppercase text-[10px] tracking-[0.3em] text-left text-left text-left text-left text-left text-left text-left text-left">Business</th>
-                            <td class="py-8 text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left">撮影業、コンサルティング業、その他</td>
+                            <th class="py-8 text-left font-normal text-gray-400 uppercase text-[10px] tracking-[0.3em] text-left text-left text-left text-left text-left text-left">Established</th>
+                            <td class="py-8 text-left text-left text-left text-left text-left text-left text-left">2017年 3月</td>
+                        </tr>
+                        <tr class="border-b border-gray-100 text-left text-left text-left text-left text-left">
+                            <th class="py-8 text-left font-normal text-gray-400 uppercase text-[10px] tracking-[0.3em] text-left text-left text-left text-left text-left text-left text-left text-left">Address</th>
+                            <td class="py-8 text-left text-left text-left text-left text-left text-left text-left text-left text-left">〒060-0004 札幌市中央区北4条西4丁目1-7 MMSビル 412</td>
+                        </tr>
+                        <tr class="border-b border-gray-100 text-left text-left text-left text-left text-left text-left">
+                            <th class="py-8 text-left font-normal text-gray-400 uppercase text-[10px] tracking-[0.3em] text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left">Business</th>
+                            <td class="py-8 text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left text-left">撮影業、コンサルティング業、その他</td>
                         </tr>
                     </table>
                 </div>
@@ -349,10 +360,10 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-milio-black text-white pt-48 pb-16 px-8 lg:px-16 text-center text-center text-center">
+    <footer id="contact" class="bg-milio-black text-white pt-48 pb-16 px-8 lg:px-16 text-center text-center">
         <div class="max-w-7xl mx-auto text-center text-center text-center text-center">
-            <div class="flex flex-col items-center text-center mb-40 text-center text-center text-center text-center text-center">
-                <h2 class="text-4xl md:text-6xl font-brand font-thin mb-16 tracking-tighter text-white/90 text-center text-center text-center text-center text-center text-center text-center">Stay in touch.</h2>
+            <div class="flex flex-col items-center text-center mb-40 text-center text-center text-center text-center">
+                <h2 class="text-4xl md:text-6xl font-brand font-thin mb-16 tracking-tighter text-white/90 text-center text-center text-center text-center text-center text-center">Stay in touch.</h2>
                 <a href="mailto:hello@design4qol.com" class="text-xl md:text-3xl font-brand font-light border-b border-milio-brand pb-4 hover:border-white transition-all tracking-widest text-center text-center text-center text-center text-center">
                     hello@design4qol.com
                 </a>
@@ -361,12 +372,12 @@
             <div class="flex flex-col md:flex-row justify-between items-center md:items-end gap-12 border-t border-gray-800 pt-16 text-left">
                 <div class="flex items-center gap-6">
                     <div class="flex flex-col items-center text-center text-center">
-                        <img src="images/logo2.png" alt="MiLio Logo" class="logo-img-footer text-center">
-                        <span class="text-[9px] font-brand tracking-[0.2em] text-gray-500 mt-3 uppercase text-center text-center text-center">design4qol.com</span>
+                        <img src="images/logo2.png" alt="MiLio Logo" class="logo-img-footer text-center text-center">
+                        <span class="text-[9px] font-brand tracking-[0.2em] text-gray-500 mt-3 uppercase text-center text-center text-center text-center">design4qol.com</span>
                     </div>
                 </div>
-                <div class="text-center md:text-right text-center text-center text-center">
-                    <p class="text-[9px] font-brand text-gray-600 tracking-[0.4em] uppercase text-center md:text-right text-center text-center text-center text-center text-center">
+                <div class="text-center md:text-right text-center md:text-right text-center">
+                    <p class="text-[9px] font-brand text-gray-600 tracking-[0.4em] uppercase text-center md:text-right text-center text-center text-center text-center text-center text-center text-center">
                         &copy; 2025 MiLio, LLC ALL RIGHTS RESERVED.
                     </p>
                 </div>
